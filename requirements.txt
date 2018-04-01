@@ -1,0 +1,6 @@
+colorama
+pyfiglet
+youtube-dl
+progressbar2
+requests
+numpy
