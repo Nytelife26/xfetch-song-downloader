@@ -26,7 +26,7 @@ try:
     from zipfile import ZipFile
     import numpy as np
 except ImportError:
-    print("[ERR] Some modules failed import. Install all the program's requirements with the following command:\npip install -r requirements.txt")
+    print("[ERR] Some modules failed to import. Install all the program's requirements with the following command:\npip install -r requirements.txt")
 subprocess.call("cls" if os.name == "nt" else "clear", shell=True)
     
     
