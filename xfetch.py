@@ -48,7 +48,7 @@ if os.name == "nt":
             arc = "32"
             mxc = np.ceil(51905555 / 8096) # Chunks estimate
         
-        url = "https://ffmpeg.zeranoe.com/builds/win{0}/static/ffmpeg-20180331-be502ec-win{0}-static.zip".format(arc)
+        url = "https://ffmpeg.zeranoe.com/builds/win{0}/static/ffmpeg-4.1-win{0}-static.zip".format(arc)
         fn = url.split("/")[-1]
         res = requests.get(url, stream=True)
         pb = progressbar.ProgressBar(widgets=widgets, max_value=mxc)
