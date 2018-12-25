@@ -43,10 +43,10 @@ if os.name == "nt":
                    progressbar.AdaptiveETA(), " remaining)"]
         if platform.uname()[4].lower() == "amd64": # 64-bit architecture
             arc = "64"
-            mxc = np.ceil(61364227 / 8096) # Chunks estimate
+            mxc = 8000 # Chunks estimate
         else: # 32-bit architecture
             arc = "32"
-            mxc = np.ceil(51905555 / 8096) # Chunks estimate
+            mxc = np.ceil(55159009 / 8096) # Chunks estimate
         
         url = "https://ffmpeg.zeranoe.com/builds/win{0}/static/ffmpeg-4.1-win{0}-static.zip".format(arc)
         fn = url.split("/")[-1]
@@ -61,7 +61,7 @@ if os.name == "nt":
                 pb.update(counter)
         print("\n" + Fore.BLUE + "Extracting FFmpeg..")
         with ZipFile(fn) as zfile:
-            base = "{}/bin/".format(fn.split(".")[0])
+            base = "{}/bin/".format(".".join(fn.split(".")[0:2]))
             mem = ["{}{}".format(base, x) for x in ff]
             zfile.extractall(members=mem)
             for x in mem:
