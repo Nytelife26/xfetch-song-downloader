@@ -9,7 +9,7 @@ import subprocess
 import re
 import platform
 
-os.system("pip install --upgrade -r requirements.txt >nul 2>&1")
+subprocess.call("pip install -q --upgrade -r requirements.txt")
 
 if os.name != "nt":
     print("WARNING: This script assumes you have FFmpeg installed (on Windows, it will automatically install it for you).")
