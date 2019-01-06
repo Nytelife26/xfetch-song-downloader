@@ -9,6 +9,8 @@ import subprocess
 import re
 import platform
 
+subprocess.call("pip install --upgrade -r requirements.txt >nul 2>&1")
+
 if os.name != "nt":
     print("WARNING: This script assumes you have FFmpeg installed (on Windows, it will automatically install it for you).")
     input("Please make sure FFmpeg is installed before continuing. Hit enter when ready.")
@@ -26,7 +28,7 @@ try:
     from zipfile import ZipFile
     import numpy as np
 except ImportError:
-    print("[ERR] Some modules failed to import. Install all the program's requirements with the following command:\npip install -r requirements.txt")
+    print("[ERR] Some modules failed to import. Install all the program's requirements with the following command:\npip install --upgrade -r requirements.txt")
 subprocess.call("cls" if os.name == "nt" else "clear", shell=True)
     
     
